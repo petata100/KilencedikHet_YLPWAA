@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Humor, kacagás</title>
+</head>
+<body>
+    <div>
+        <div id="jokeList"></div>
+        <div>
+            <input id="jokeText" type="text" placeholder="Csak PC vicc" />
+        </div>
+        <button id="addButton">Új vicc felvétele</button>
+        <button id="listButton">Viccek listázása</button>
+    </div>
+    <script>
+        document.getElementById("addButton").addEventListener("click", () => {
+
+            //Ezt az objektumot fogjuk átküldeni
+            let data = {
+                jokeText: document.getElementById("jokeText").value
+            }
+
+            fetch("api/jokes",
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                }).then(x => {
+                    if (x.ok) {
+                        alert("Siker");
+
+                    }
+                    else {
+                        alert("Kudarc");
+                    };
+                });
+        });
+
+        //document.getElementById("listButton").addEventListener("click", () => {
+
+        //    fetch("api/jokes",
+        //        {
+        //            method: 'GET',
+        //            headers: {
+        //                'Content-Type': 'application/json'
+        //            },
+
+        //        }).then(x => x.json()).then(x => for (i in x) {
+        //            document.createElement(i);
+        //        });
+        //});
+
+        // nem sikerült
+    </script>
+</body>
+</html>
