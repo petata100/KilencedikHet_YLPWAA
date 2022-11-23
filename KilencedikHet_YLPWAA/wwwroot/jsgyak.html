@@ -18,9 +18,9 @@
             ujSor.classList.add("sor");
             pascal.appendChild(ujSor);
 
-            for (var i = 0; i < s; i++) {
+            for (var i = 0; i <= s; i++) {
                 var újElem = document.createElement("div");
-                újElem.innerHTML = faktor(3);
+                újElem.innerHTML = faktor(s)/(faktor(i)*faktor(s-i));
                 újElem.classList.add("elem");
                 ujSor.appendChild(újElem);
             }
