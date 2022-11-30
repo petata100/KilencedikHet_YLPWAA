@@ -18,7 +18,7 @@
                 <div id="válasz3" class="kerdes kattintható rossz">Válasz 3</div>
             </div>
             <div id="kép">
-                <img id="kép1" src="https://kzgzdiag426.blob.core.windows.net/netcore/teszt-0050.jpg"/>
+                <img id="kép1" src="https://kzgzdiag426.blob.core.windows.net/netcore/teszt-0050.jpg" />
             </div>
         </div>
         <div id="vezérlő">
@@ -27,24 +27,6 @@
         </div>
     </div>
 
-    <script>
-        fetch("/hajo/kerdesek/all")
-            .then(response => response.json())
-            .then(data => kiir(data));
-
-        function kiir(whatever) {
-            for (var i = 0; i < whatever.length; i++) {
-                let newDiv = document.createElement("div")
-                newDiv.innerText = whatever[i]
-                newDiv.setAttribute("idé",i)
-                document.body.appendChild(newDiv)
-                newDiv.addEventListener("click", t => {
-
-                    alert(t.target.getAttribute("idé"))
-
-                })
-            }
-        }
-    </script>
+    <script src="hajo_main.js"></script>
 </body>
 </html>

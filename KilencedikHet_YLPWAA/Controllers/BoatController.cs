@@ -23,13 +23,15 @@ namespace KilencedikHet_YLPWAA.Controllers
         public IActionResult f2(int id)
         {
             Models.HajosContext hajosContext = new Models.HajosContext();
-            var lisa = from x in hajosContext.Questions
+            var kérdés = (from x in hajosContext.Questions
                        where x.QuestionId == id
-                       select x;
-            
+                       select x).FirstOrDefault();
+
             // var lisa2 = hajosContext.Questions.Where(x => x.QuestionId == id); ugyanez lenne
 
-            return Ok(lisa);
+            if (kérdés == null) return BadRequest("Nincs ilyen sorszámú kérdés");
+
+            return new JsonResult(kérdés);
         }
     }
 }
