@@ -8,12 +8,12 @@ namespace KilencedikHet_YLPWAA.Controllers
     public class BoatController : ControllerBase
     {
         [HttpGet]
-        [Route("hajo/kerdesek")]
+        [Route("hajo/kerdesek/all")]
 
         public IActionResult függvénynév()
         {
             Models.HajosContext hajosContext = new Models.HajosContext();
-            var lisa = from x in hajosContext.Questions select x;
+            var lisa = from x in hajosContext.Questions select x.Question1;
             return Ok(lisa); // automatikusan JSON-né fog konvertálódni, nem kell vele foglalkozni
         }
 
