@@ -5,7 +5,7 @@
     <title>Hajós teszt</title>
     <link href="hajo_style.css" rel="stylesheet" />
 </head>
-<body>
+<body onload="kérdésBetöltés(id)">
     <div id="külső">
         <div id="kérdés">
             Kérdés szövege
@@ -22,8 +22,8 @@
             </div>
         </div>
         <div id="vezérlő">
-            <div class="gomb kattintható">Vissza</div>
-            <div class="gomb kattintható">Előre</div>
+            <div class="gomb kattintható" onclick="next()">Vissza</div>
+            <div class="gomb kattintható" onclick="back()">Előre</div>
         </div>
     </div>
 
