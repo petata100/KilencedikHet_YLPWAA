@@ -13,7 +13,7 @@ div {
     flex-direction: column;
 }
 
-#kérdés {
+#kérdés_szöveg {
 }
 
 #középső {
@@ -50,4 +50,16 @@ div {
     background-color: brown;
     color: white;
     cursor: pointer;
+}
+
+.rejtett {
+    display: none;
+}
+
+.jó {
+    background-color: green;
+}
+
+.rossz {
+    background-color: red;
 }

@@ -33,5 +33,15 @@ namespace KilencedikHet_YLPWAA.Controllers
 
             return new JsonResult(kérdés);
         }
+
+        [HttpGet]
+        [Route("questions/count")]
+        public int M4() //Tetszőleges metódusnév
+        {
+            Models.HajosContext context = new Models.HajosContext();
+            int kérdésekSzáma = context.Questions.Count();
+
+            return kérdésekSzáma;
+        }
     }
 }
